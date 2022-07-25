@@ -1,4 +1,4 @@
-import React, { FC, useState, ChangeEvent } from 'react';
+import React, { FC, useState, ChangeEvent, useEffect } from 'react';
 import './CardForm.css';
 
 const CardForm: FC = () => {
@@ -7,6 +7,16 @@ const CardForm: FC = () => {
     const [quote, setQuote] = useState<string>('')
     const [message, setMessage] = useState<string>('')
     const [from, setFrom] = useState<string>('')
+
+    const getCompliment = () => {
+        return fetch('https://complimentr.com/api')
+        .then(response => response.json())
+        .then(data => setQuote(data.compliment))
+    }
+
+    useEffect(() => {
+        getCompliment()
+    }, [])
 
     const handleChange = (event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>) => {
         if (event.target.name === 'to-input') {
@@ -23,7 +33,7 @@ const CardForm: FC = () => {
             <label htmlFor='to-input'>To: 
                 <input type='text' name='to-input' value={to} onChange={ event => handleChange(event)} data-cy='to-input'/> 
             </label>
-            <h2></h2>
+            <h2>{quote}</h2>
             <textarea placeholder='Add message here...' name='message-input' onChange={ event => handleChange(event)} value={message} data-cy='message-input'/>
             <label htmlFor='from-input'>From: 
                 <input type='text' name='from-input' onChange={ event => handleChange(event)} value={from} data-cy='from-input'/> 
@@ -34,3 +44,8 @@ const CardForm: FC = () => {
 };
 
 export default CardForm;
+
+
+// https://complimentr.com/api
+    //https://geek-jokes.sameerkumar.website/api?format=json
+    //https://type.fit/api/quotes
