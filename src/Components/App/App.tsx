@@ -13,7 +13,18 @@ const App: FC = () => {
     <main>
       <NavBar />
       <Route 
-        path='/' render={()=> <section className='home' data-cy='home'></section>}
+        path='/' render={()=> 
+        <section className='home' data-cy='home'>
+          <div className='description'>
+            <h2>Do you wanna have friends and be <i>PoPuLaR!!!!!</i></h2>
+            <p>Make a card for your mom or your dad or your pets or your friends or your mailman</p>
+          </div>
+          <p>Please select an option</p>
+          <div className='choices'>
+            <button>Quotes</button>
+            <button>Jokes</button>
+          </div>
+        </section>}
       />
       <Route
         path='/create-card' render={() => <CardForm />}
