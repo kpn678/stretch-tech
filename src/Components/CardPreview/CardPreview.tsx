@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { FC } from 'react';
 import './CardPreview.css';
 
 
-const CardPreview = () => {
+const CardPreview: FC = () => {
     return (
         <h2>Card Preview Here!</h2>
     );
