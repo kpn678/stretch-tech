@@ -21,8 +21,8 @@ const App: FC = () => {
           </div>
           <p>Please select an option</p>
           <div className='choices'>
-            <button>Quotes</button>
-            <button>Jokes</button>
+            <button data-cy='quotes-button'>Quotes</button>
+            <button data-cy='jokes-button'>Jokes</button>
           </div>
         </section>}
       />
