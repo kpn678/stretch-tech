@@ -8,10 +8,11 @@ const CardForm: FC = () => {
     const [message, setMessage] = useState<string>('')
     const [from, setFrom] = useState<string>('')
 
-    const getCompliment = () => {
-        return fetch('https://complimentr.com/api')
-        .then(response => response.json())
-        .then(data => setQuote(data.compliment))
+    const getCompliment = async (): Promise<any> => {
+        const URL = 'https://complimentr.com/api'
+        const response = await fetch(URL)
+        const quote = await response.json()
+        setQuote(quote.compliment)
     }
 
     useEffect(() => {
@@ -38,6 +39,7 @@ const CardForm: FC = () => {
             <label htmlFor='from-input'>From: 
                 <input type='text' name='from-input' onChange={ event => handleChange(event)} value={from} data-cy='from-input'/> 
             </label>
+            <button></button>
         </form>
     );
     
