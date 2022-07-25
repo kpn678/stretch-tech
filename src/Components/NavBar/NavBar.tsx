@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { FC } from 'react';
 import './NavBar.css';
 
 
-const NavBar = () => {
+const NavBar: FC = () => {
     return (
         <h1>Corndogs!</h1>
     );

@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { FC } from 'react';
 import './GreetingCard.css';
 
-const GreetingCard = () => {
+const GreetingCard: FC = () => {
     return (
         <p>Single Card</p>
     );
