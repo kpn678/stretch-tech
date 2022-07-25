@@ -13,16 +13,16 @@ const App: FC = () => {
     <main>
       <NavBar />
       <Route 
-       path='/' render={()=> <section className='home' data-cy='home'></section>}
+        path='/' render={()=> <section className='home' data-cy='home'></section>}
       />
       <Route
-      path='/create-card' render={() => <CardForm />}
+        path='/create-card' render={() => <CardForm />}
       />
       <Route
-      path='/preview-card' render={() => <CardPreview />}
+        path='/preview-card' render={() => <CardPreview />}
       />
       <Route
-      path='/saved-cards' render={() => <SavedCards />}
+        path='/saved-cards' render={() => <SavedCards />}
       />
     </main>
   );

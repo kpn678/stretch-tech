@@ -5,9 +5,15 @@ import './NavBar.css';
 
 const NavBar: FC = () => {
     return (
-        <Link to={'/'} style={{textDecoration: 'none'}}>
-            <h1>Card Generator</h1>
-        </Link>
+        <nav>
+            <Link to={'/'} style={{textDecoration: 'none'}}>
+                <h1>Card Generator</h1>
+            </Link>
+            <Link to={'/saved-cards'} style={{textDecoration: 'none'}}>
+                <button>🌟</button>
+            </Link>
+        </nav>
+
     );
 };
 
