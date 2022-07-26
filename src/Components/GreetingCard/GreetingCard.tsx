@@ -1,9 +1,21 @@
 import React, { FC } from 'react';
 import './GreetingCard.css';
 
-const GreetingCard: FC = () => {
+interface Props{
+    to: string;
+    quote: string;
+    message: string;
+    from: string
+}
+
+const GreetingCard: FC<Props> = ({to, quote, message, from }) => {
     return (
-        <p>Single Card</p>
+        <section className="mini-card">
+            <p>To: {to}</p>
+            <p>{quote}</p>
+            <p>{message}</p>
+            <p>From: {from}</p>
+        </section>
     );
 };
 
