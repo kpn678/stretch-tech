@@ -1,7 +1,12 @@
 import React, { FC, useState, ChangeEvent, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './CardForm.css';
 
-const CardForm: FC = () => {
+interface Props {
+    addCard(card: object): void
+}
+
+const CardForm = ({addCard}:Props) => {
 
     const [to, setTo] = useState<string>('')
     const [quote, setQuote] = useState<string>('')
@@ -39,7 +44,15 @@ const CardForm: FC = () => {
             <label htmlFor='from-input'>From: 
                 <input type='text' name='from-input' onChange={ event => handleChange(event)} value={from} data-cy='from-input'/> 
             </label>
-            <button></button>
+            <div>
+                <Link to="/preview-card">
+                    <button>Make my card!</button>
+                </Link>
+                <button onClick={() => getCompliment}>Get new compliment</button>
+                <Link to="/">
+                    <button>Take me home!</button>
+                </Link>
+            </div>
         </form>
     );
     
