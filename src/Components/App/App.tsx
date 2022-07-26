@@ -61,9 +61,9 @@ const App: FC = () => {
       <Route
         path='/preview-card' render={() => <CardPreview saveCard={saveCard} currentCard={currentCard}/>}
       />
-      <Route
-        path='/saved-cards' render={() => <SavedCards />}
-      />
+      {/* <Route
+        path='/saved-cards' render={() => <SavedCards savedCards={savedCards} />}
+      /> */}
     </main>
   );
    
