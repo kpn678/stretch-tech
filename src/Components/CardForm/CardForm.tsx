@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './CardForm.css';
 
 interface Props {
-    addCard(card: object): void
+    addCard:(card: object) => void
 }
 
 const CardForm = ({addCard}:Props) => {
@@ -23,6 +23,18 @@ const CardForm = ({addCard}:Props) => {
     useEffect(() => {
         getCompliment()
     }, [])
+
+    const createCard = (event:any): void => {
+        event.preventDefault();
+        const card = {
+            to: to,
+            quote: quote,
+            message: message,
+            from: from
+        }
+        console.log(card)
+        addCard(card);
+    }
 
     const handleChange = (event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>) => {
         if (event.target.name === 'to-input') {
@@ -46,9 +58,11 @@ const CardForm = ({addCard}:Props) => {
             </label>
             <div>
                 <Link to="/preview-card">
-                    <button>Make my card!</button>
+                    <button onClick={(event) => createCard(event)}>Make my card!</button>
                 </Link>
-                <button onClick={() => getCompliment}>Get new compliment</button>
+                <button onClick={(event) => {
+                    event.preventDefault()
+                    getCompliment()}}>Get new compliment</button>
                 <Link to="/">
                     <button>Take me home!</button>
                 </Link>
