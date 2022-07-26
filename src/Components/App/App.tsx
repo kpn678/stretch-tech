@@ -6,16 +6,33 @@ import CardForm from '../CardForm/CardForm';
 import CardPreview from '../CardPreview/CardPreview';
 import SavedCards from '../SavedCards/SavedCards';
 
+// interface Props {
+//   currentCard: {
+//       from: string;
+//       to: string;
+//       message: string;
+//       quote: string;
+//   };
+//   saveCard: (card: object) => void
+// }
+
+type MyCard={
+  from: string;
+  to: string;
+  message: string;
+  quote: string;
+}
+
 const App: FC = () => {
 
   const [savedCards, setSavedCards] = useState<{}[]>([])
-  const [currentCard, setCurrentCard] = useState<{}>({})
+  const [currentCard, setCurrentCard] = useState<{}>()
 
   const saveCard = (card: object): void => {
     setSavedCards([...savedCards, card])
   }
 
-  const selectCard = (card: object): void => {
+  const selectCard = (card: MyCard): void => {
     setCurrentCard(card)
   }
 
