@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import './CardForm.css';
 
 interface Props {
-    addCard:(card: object) => void
+    selectCard:(card: object) => void
 }
 
-const CardForm = ({addCard}:Props) => {
+const CardForm = ({selectCard}:Props) => {
 
     const [to, setTo] = useState<string>('')
     const [quote, setQuote] = useState<string>('')
@@ -32,7 +32,7 @@ const CardForm = ({addCard}:Props) => {
             from: from
         }
         console.log(card)
-        addCard(card);
+        selectCard(card);
     }
 
     const handleChange = (event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>) => {

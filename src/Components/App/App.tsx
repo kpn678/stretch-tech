@@ -9,9 +9,14 @@ import SavedCards from '../SavedCards/SavedCards';
 const App: FC = () => {
 
   const [savedCards, setSavedCards] = useState<{}[]>([])
+  const [currentCard, setCurrentCard] = useState<{}>({})
 
-  const addCard = (card: object): void => {
+  const saveCard = (card: object): void => {
     setSavedCards([...savedCards, card])
+  }
+
+  const selectCard = (card: object): void => {
+    setCurrentCard(card)
   }
 
   return (
@@ -34,10 +39,10 @@ const App: FC = () => {
         </section>}
       />
       <Route
-        path='/create-card' render={() => <CardForm addCard={addCard}/>}
+        path='/create-card' render={() => <CardForm selectCard={selectCard} />}
       />
       <Route
-        path='/preview-card' render={() => <CardPreview savedCards={savedCards}/>}
+        path='/preview-card' render={() => <CardPreview saveCard={saveCard} currentCard={currentCard}/>}
       />
       <Route
         path='/saved-cards' render={() => <SavedCards />}

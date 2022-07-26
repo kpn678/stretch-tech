@@ -2,10 +2,11 @@ import React, { FC } from 'react';
 import './CardPreview.css';
 
 interface Props {
-    savedCards: {}[];
+    currentCard: {};
+    saveCard: (card: object) => void
 }
 
-const CardPreview: FC<Props> = ({savedCards}) => {
+const CardPreview: FC<Props> = ({currentCard, saveCard}) => {
     return (
         <div>hello</div>
     );
