@@ -1,6 +1,6 @@
 import React, { FC, useState} from 'react';
 import './App.css';
-import { Route } from "react-router-dom"
+import { Route, Link } from "react-router-dom"
 import NavBar from '../NavBar/NavBar';
 import CardForm from '../CardForm/CardForm';
 import CardPreview from '../CardPreview/CardPreview';
@@ -26,7 +26,9 @@ const App: FC = () => {
           </div>
           <p>Please select an option</p>
           <div className='choices'>
-            <button data-cy='quotes-button'>Quotes</button>
+            <Link to="/create-card">
+              <button data-cy='quotes-button'>Quotes</button>
+            </Link>
             <button data-cy='jokes-button'>Jokes</button>
           </div>
         </section>}
@@ -35,7 +37,7 @@ const App: FC = () => {
         path='/create-card' render={() => <CardForm addCard={addCard}/>}
       />
       <Route
-        path='/preview-card' render={() => <CardPreview />}
+        path='/preview-card' render={() => <CardPreview savedCards={savedCards}/>}
       />
       <Route
         path='/saved-cards' render={() => <SavedCards />}

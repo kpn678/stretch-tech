@@ -24,8 +24,7 @@ const CardForm = ({addCard}:Props) => {
         getCompliment()
     }, [])
 
-    const createCard = (event:any): void => {
-        event.preventDefault();
+    const createCard = (): void => {
         const card = {
             to: to,
             quote: quote,
@@ -57,12 +56,16 @@ const CardForm = ({addCard}:Props) => {
                 <input type='text' name='from-input' onChange={ event => handleChange(event)} value={from} data-cy='from-input'/> 
             </label>
             <div>
-                <Link to="/preview-card">
-                    <button onClick={(event) => createCard(event)}>Make my card!</button>
+                
+                <Link to="/preview-card" onClick={() => createCard()}>
+                    <button>Make my card!</button>
                 </Link>
+                
+                
                 <button onClick={(event) => {
                     event.preventDefault()
-                    getCompliment()}}>Get new compliment</button>
+                    getCompliment()}}>Get new compliment
+                </button>
                 <Link to="/">
                     <button>Take me home!</button>
                 </Link>
