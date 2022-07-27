@@ -32,7 +32,6 @@ const CardForm = ({selectCard}:Props) => {
             message: message,
             from: from
         }
-        console.log(card)
         selectCard(card);
     }
 

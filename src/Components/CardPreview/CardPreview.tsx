@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import './CardPreview.css';
 import Card from "../../types/Card.type"
+import { Link } from "react-router-dom"
 
 interface Props {
     currentCard: {
@@ -25,7 +26,9 @@ const CardPreview: FC<Props> = ({currentCard, saveCard}) => {
             </div>
             <div className="button-holder">
                 <button>New Card</button>
-                <button>Save Card</button>
+                <Link to="/saved-cards">
+                    <button onClick={() => saveCard(currentCard)}>Save Card</button>
+                </Link>
                 <button>Home</button>
             </div>
         </section>

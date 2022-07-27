@@ -7,16 +7,10 @@ import CardPreview from '../CardPreview/CardPreview';
 import SavedCards from '../SavedCards/SavedCards';
 import Card from "../../types/Card.type"
 
-type MyCard={
-  from: string;
-  to: string;
-  message: string;
-  quote: string;
-}
 
 const App: FC = () => {
 
-  const [savedCards, setSavedCards] = useState<{}[]>([])
+  const [savedCards, setSavedCards] = useState<Card[]>([])
   const [currentCard, setCurrentCard] = useState<Card>({  
     from: "",
     to: "",
@@ -57,9 +51,9 @@ const App: FC = () => {
       <Route
         path='/preview-card' render={() => <CardPreview saveCard={saveCard} currentCard={currentCard}/>}
       />
-      {/* <Route
+      <Route
         path='/saved-cards' render={() => <SavedCards savedCards={savedCards} />}
-      /> */}
+      />
     </main>
   );
 };
