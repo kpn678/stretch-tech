@@ -10,7 +10,6 @@ interface Props{
 }
 
 const GreetingCard: FC<Card> = ({to, quote, message, from }) => {
-    console.log(to, quote, message, from)
     return (
         <section className="mini-card">
             <p>To: {to}</p>
