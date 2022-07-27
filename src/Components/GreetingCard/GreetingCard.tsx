@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import Card from '../../types/Card.type';
 import './GreetingCard.css';
 
 interface Props{
@@ -8,7 +9,8 @@ interface Props{
     from: string
 }
 
-const GreetingCard: FC<Props> = ({to, quote, message, from }) => {
+const GreetingCard: FC<Card> = ({to, quote, message, from }) => {
+    console.log(to, quote, message, from)
     return (
         <section className="mini-card">
             <p>To: {to}</p>

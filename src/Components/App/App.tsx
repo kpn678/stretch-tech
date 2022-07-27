@@ -5,16 +5,7 @@ import NavBar from '../NavBar/NavBar';
 import CardForm from '../CardForm/CardForm';
 import CardPreview from '../CardPreview/CardPreview';
 import SavedCards from '../SavedCards/SavedCards';
-
-// interface Props {
-//   currentCard: {
-//       from: string;
-//       to: string;
-//       message: string;
-//       quote: string;
-//   };
-//   saveCard: (card: object) => void
-// }
+import Card from "../../types/Card.type"
 
 type MyCard={
   from: string;
@@ -26,13 +17,18 @@ type MyCard={
 const App: FC = () => {
 
   const [savedCards, setSavedCards] = useState<{}[]>([])
-  const [currentCard, setCurrentCard] = useState<{}>()
+  const [currentCard, setCurrentCard] = useState<Card>({  
+    from: "",
+    to: "",
+    message: "",
+    quote: ""
+  })
 
-  const saveCard = (card: object): void => {
+  const saveCard = (card: Card): void => {
     setSavedCards([...savedCards, card])
   }
 
-  const selectCard = (card: MyCard): void => {
+  const selectCard = (card: Card): void => {
     setCurrentCard(card)
   }
 
@@ -66,7 +62,6 @@ const App: FC = () => {
       /> */}
     </main>
   );
-   
 };
 
 export default App;

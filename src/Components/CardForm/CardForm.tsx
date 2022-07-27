@@ -1,9 +1,10 @@
 import React, { FC, useState, ChangeEvent, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './CardForm.css';
+import Card from "../../types/Card.type"
 
 interface Props {
-    selectCard:(card: object) => void
+    selectCard:(card: Card) => void
 }
 
 const CardForm = ({selectCard}:Props) => {
