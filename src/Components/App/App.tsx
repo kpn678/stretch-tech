@@ -46,14 +46,16 @@ const App: FC = () => {
           <p>Please select an option</p>
           <div className='choices'>
             <Link to="/create-card">
-              <button name='compliments' onClick={(event) => handleClick(event)} data-cy='compliments-button'>Compliments</button>
+              <button name='compliment' onClick={(event) => handleClick(event)} data-cy='compliments-button'>Compliments</button>
             </Link>
-            <button name='jokes' onClick={(event) => handleClick(event)} data-cy='jokes-button'>Jokes</button>
+            <Link to='/create-card'>
+              <button name='joke' onClick={(event) => handleClick(event)} data-cy='jokes-button'>Jokes</button>
+            </Link>
           </div>
         </section>}
       />
       <Route
-        path='/create-card' render={() => <CardForm selectCard={selectCard} />}
+        path='/create-card' render={() => <CardForm selectCard={selectCard} choice={choice} />}
       />
       <Route
         path='/preview-card' render={() => <CardPreview saveCard={saveCard} currentCard={currentCard}/>}
