@@ -15,7 +15,6 @@ interface Props {
 }
 
 const CardPreview: FC<Props> = ({currentCard, saveCard}) => {
-    console.log(currentCard)
     return (
         <section className="card-preview-page">
             <div className="card">
@@ -25,11 +24,12 @@ const CardPreview: FC<Props> = ({currentCard, saveCard}) => {
                 <h2>From: {currentCard.from} </h2>
             </div>
             <div className="button-holder">
-                <button>New Card</button>
+                <Link to="/create-card">
+                    <button>New Card</button>
+                </Link>
                 <Link to="/saved-cards">
                     <button onClick={() => saveCard(currentCard)}>Save Card</button>
                 </Link>
-                <button>Home</button>
             </div>
         </section>
     );

@@ -9,7 +9,6 @@ interface Props{
 }
 
 const SavedCards: FC<Props> = ({savedCards}) => {
-    console.log(savedCards)
     const allCards= savedCards.map((card) => {
         return <GreetingCard
             key={card.id} 
