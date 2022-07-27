@@ -1,17 +1,39 @@
 import React, { FC, useState} from 'react';
 import './App.css';
-import { Route } from "react-router-dom"
+import { Route, Link } from "react-router-dom"
 import NavBar from '../NavBar/NavBar';
 import CardForm from '../CardForm/CardForm';
 import CardPreview from '../CardPreview/CardPreview';
 import SavedCards from '../SavedCards/SavedCards';
 
+// interface Props {
+//   currentCard: {
+//       from: string;
+//       to: string;
+//       message: string;
+//       quote: string;
+//   };
+//   saveCard: (card: object) => void
+// }
+
+type MyCard={
+  from: string;
+  to: string;
+  message: string;
+  quote: string;
+}
+
 const App: FC = () => {
 
   const [savedCards, setSavedCards] = useState<{}[]>([])
+  const [currentCard, setCurrentCard] = useState<{}>()
 
-  const addCard = (card: object): void => {
+  const saveCard = (card: object): void => {
     setSavedCards([...savedCards, card])
+  }
+
+  const selectCard = (card: MyCard): void => {
+    setCurrentCard(card)
   }
 
   return (
@@ -26,20 +48,22 @@ const App: FC = () => {
           </div>
           <p>Please select an option</p>
           <div className='choices'>
-            <button data-cy='quotes-button'>Quotes</button>
+            <Link to="/create-card">
+              <button data-cy='quotes-button'>Quotes</button>
+            </Link>
             <button data-cy='jokes-button'>Jokes</button>
           </div>
         </section>}
       />
       <Route
-        path='/create-card' render={() => <CardForm addCard={addCard}/>}
+        path='/create-card' render={() => <CardForm selectCard={selectCard} />}
       />
       <Route
-        path='/preview-card' render={() => <CardPreview />}
+        path='/preview-card' render={() => <CardPreview saveCard={saveCard} currentCard={currentCard}/>}
       />
-      <Route
-        path='/saved-cards' render={() => <SavedCards />}
-      />
+      {/* <Route
+        path='/saved-cards' render={() => <SavedCards savedCards={savedCards} />}
+      /> */}
     </main>
   );
    
