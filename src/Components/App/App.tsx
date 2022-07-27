@@ -5,34 +5,24 @@ import NavBar from '../NavBar/NavBar';
 import CardForm from '../CardForm/CardForm';
 import CardPreview from '../CardPreview/CardPreview';
 import SavedCards from '../SavedCards/SavedCards';
+import Card from "../../types/Card.type"
 
-// interface Props {
-//   currentCard: {
-//       from: string;
-//       to: string;
-//       message: string;
-//       quote: string;
-//   };
-//   saveCard: (card: object) => void
-// }
-
-type MyCard={
-  from: string;
-  to: string;
-  message: string;
-  quote: string;
-}
 
 const App: FC = () => {
 
-  const [savedCards, setSavedCards] = useState<{}[]>([])
-  const [currentCard, setCurrentCard] = useState<{}>()
+  const [savedCards, setSavedCards] = useState<Card[]>([])
+  const [currentCard, setCurrentCard] = useState<Card>({  
+    from: "",
+    to: "",
+    message: "",
+    quote: ""
+  })
 
-  const saveCard = (card: object): void => {
+  const saveCard = (card: Card): void => {
     setSavedCards([...savedCards, card])
   }
 
-  const selectCard = (card: MyCard): void => {
+  const selectCard = (card: Card): void => {
     setCurrentCard(card)
   }
 
@@ -61,12 +51,11 @@ const App: FC = () => {
       <Route
         path='/preview-card' render={() => <CardPreview saveCard={saveCard} currentCard={currentCard}/>}
       />
-      {/* <Route
+      <Route
         path='/saved-cards' render={() => <SavedCards savedCards={savedCards} />}
-      /> */}
+      />
     </main>
   );
-   
 };
 
 export default App;

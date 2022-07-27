@@ -1,9 +1,10 @@
 import React, { FC, useState, ChangeEvent, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './CardForm.css';
+import Card from "../../types/Card.type"
 
 interface Props {
-    selectCard:(card: object) => void
+    selectCard:(card: Card) => void
 }
 
 const CardForm = ({selectCard}:Props) => {
@@ -29,9 +30,9 @@ const CardForm = ({selectCard}:Props) => {
             to: to,
             quote: quote,
             message: message,
-            from: from
+            from: from,
+            id: Date.now()
         }
-        console.log(card)
         selectCard(card);
     }
 
@@ -66,9 +67,6 @@ const CardForm = ({selectCard}:Props) => {
                     event.preventDefault()
                     getCompliment()}}>Get new compliment
                 </button>
-                <Link to="/">
-                    <button>Take me home!</button>
-                </Link>
             </div>
         </form>
     );

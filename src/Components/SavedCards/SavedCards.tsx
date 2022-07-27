@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 import './SavedCards.css';
 import GreetingCard from '../GreetingCard/GreetingCard';
-
+import Card from "../../types/Card.type"
 
 
 interface Props{
-    savedCards: []
+    savedCards: Card[]
 }
 
 const SavedCards: FC<Props> = ({savedCards}) => {
