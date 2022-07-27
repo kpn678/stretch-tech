@@ -1,4 +1,4 @@
-import React, { FC, useState} from 'react';
+import React, { FC, useState, MouseEvent} from 'react';
 import './App.css';
 import { Route, Link } from "react-router-dom"
 import NavBar from '../NavBar/NavBar';
@@ -10,6 +10,7 @@ import Card from "../../types/Card.type"
 
 const App: FC = () => {
 
+  const [choice, setChoice] = useState<string>('')
   const [savedCards, setSavedCards] = useState<Card[]>([])
   const [currentCard, setCurrentCard] = useState<Card>({  
     from: "",
@@ -17,6 +18,12 @@ const App: FC = () => {
     message: "",
     quote: ""
   })
+
+  const handleClick = (event: MouseEvent) => {
+    const target = event.target as HTMLButtonElement
+    setChoice(target.name)
+
+  }
 
   const saveCard = (card: Card): void => {
     setSavedCards([...savedCards, card])
@@ -39,9 +46,9 @@ const App: FC = () => {
           <p>Please select an option</p>
           <div className='choices'>
             <Link to="/create-card">
-              <button data-cy='quotes-button'>Quotes</button>
+              <button name='compliments' onClick={(event) => handleClick(event)} data-cy='compliments-button'>Compliments</button>
             </Link>
-            <button data-cy='jokes-button'>Jokes</button>
+            <button name='jokes' onClick={(event) => handleClick(event)} data-cy='jokes-button'>Jokes</button>
           </div>
         </section>}
       />
