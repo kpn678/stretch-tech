@@ -57,7 +57,7 @@ const CardForm = ({selectCard, choice}:Props) => {
             <label htmlFor='to-input'>To: 
                 <input type='text' name='to-input' value={to} onChange={ event => handleChange(event)} data-cy='to-input'/> 
             </label>
-            <h2>{quote}</h2>
+            <h2 data-cy='quote'>{quote}</h2>
             <textarea placeholder='Add message here...' name='message-input' onChange={ event => handleChange(event)} value={message} data-cy='message-input'/>
             <label htmlFor='from-input'>From: 
                 <input type='text' name='from-input' onChange={ event => handleChange(event)} value={from} data-cy='from-input'/> 
@@ -65,11 +65,11 @@ const CardForm = ({selectCard, choice}:Props) => {
             <div>
                 
                 <Link to="/preview-card" onClick={() => createCard()}>
-                    <button>Make my card!</button>
+                    <button data-cy='make-card-button'>Make my card!</button>
                 </Link>
                 
                 
-                <button onClick={(event) => {
+                <button data-cy='get-quote-button' onClick={(event) => {
                     event.preventDefault()
                     getQuote()}}>{`Get new ${choice}!`}
                 </button>

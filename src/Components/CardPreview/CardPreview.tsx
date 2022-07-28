@@ -18,17 +18,17 @@ const CardPreview: FC<Props> = ({currentCard, saveCard}) => {
     return (
         <section className="card-preview-page">
             <div className="card">
-                <h2>To: {currentCard.to} </h2>
-                <p>{currentCard.quote}</p>
-                <p>{currentCard.message}</p>
-                <h2>From: {currentCard.from} </h2>
+                <h2 className='to-field'>To: {currentCard.to} </h2>
+                <p className='quote-field'>{currentCard.quote}</p>
+                <p className='message-field'>{currentCard.message}</p>
+                <h2 className='from-field'>From: {currentCard.from} </h2>
             </div>
             <div className="button-holder">
                 <Link to="/create-card">
-                    <button>New Card</button>
+                    <button className='new-card-button'>New Card</button>
                 </Link>
                 <Link to="/saved-cards">
-                    <button onClick={() => saveCard(currentCard)}>Save Card</button>
+                    <button className='save-card-button' onClick={() => saveCard(currentCard)}>Save Card</button>
                 </Link>
             </div>
         </section>
