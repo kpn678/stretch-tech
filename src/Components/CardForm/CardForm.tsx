@@ -5,24 +5,30 @@ import Card from "../../types/Card.type"
 
 interface Props {
     selectCard:(card: Card) => void
+    choice: string
 }
 
-const CardForm = ({selectCard}:Props) => {
+const CardForm = ({selectCard, choice}:Props) => {
 
     const [to, setTo] = useState<string>('')
     const [quote, setQuote] = useState<string>('')
     const [message, setMessage] = useState<string>('')
     const [from, setFrom] = useState<string>('')
 
-    const getCompliment = async (): Promise<any> => {
-        const URL = 'https://complimentr.com/api'
+    const getQuote = async (): Promise<any> => {
+        let URL;
+        if (choice === 'compliment') {
+            URL = 'https://complimentr.com/api'
+        } else {
+            URL = 'https://geek-jokes.sameerkumar.website/api?format=json'
+        }
         const response = await fetch(URL)
         const quote = await response.json()
-        setQuote(quote.compliment)
+        setQuote(quote[choice])
     }
-
+    
     useEffect(() => {
-        getCompliment()
+        getQuote()
     }, [])
 
     const createCard = (): void => {
@@ -65,7 +71,7 @@ const CardForm = ({selectCard}:Props) => {
                 
                 <button onClick={(event) => {
                     event.preventDefault()
-                    getCompliment()}}>Get new compliment
+                    getQuote()}}>{`Get new ${choice}!`}
                 </button>
             </div>
         </form>

@@ -19,7 +19,7 @@ const SavedCards: FC<Props> = ({savedCards}) => {
         />
     })
     return (
-        <div> {allCards} </div>
+        <div className='cards-grid'> {allCards} </div>
     );
 };
 
