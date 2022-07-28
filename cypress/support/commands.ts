@@ -1,37 +1,16 @@
-/// <reference types="cypress" />
-// ***********************************************
-// This example commands.ts shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-//
-// declare global {
-//   namespace Cypress {
-//     interface Chainable {
-//       login(email: string, password: string): Chainable<void>
-//       drag(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
-//       dismiss(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
-//       visit(originalFn: CommandOriginalFn, url: string, options: Partial<VisitOptions>): Chainable<Element>
-//     }
-//   }
-// }
+Cypress.Commands.add("create", () => {
+  const baseURL = 'http://localhost:3000';
+    cy.intercept('GET', 'https://geek-jokes.sameerkumar.website/api?format=json', {
+        fixture: "joke.json",
+        statusCode: 200
+    })
+    cy.visit(baseURL)
+    cy.get('[data-cy="jokes-button"]').click()
+    cy.get('[data-cy="to-input"]').type('Scott')
+    cy.get('[data-cy="message-input"]').type('U R GR8!!!!!!!')
+    cy.get('[data-cy="from-input"]').type('A. C. G. K.')
+    cy.get('[data-cy="make-card-button"]').click()
+})
+Cypress.Commands.add("save", () => { 
+  cy.get('.save-card-button').click()
+})
