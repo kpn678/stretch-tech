@@ -10,7 +10,7 @@ import Card from "../../types/Card.type"
 
 const App: FC = () => {
 
-  const [choice, setChoice] = useState<string>('')
+  const [choice, setChoice] = useState<string>("none")
   const [savedCards, setSavedCards] = useState<Card[]>([])
   const [currentCard, setCurrentCard] = useState<Card>({  
     from: "",

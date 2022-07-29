@@ -1,4 +1,4 @@
-import React, { FC, useState, ChangeEvent, useEffect } from 'react';
+import React, { useState, ChangeEvent, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './CardForm.css';
 import Card from "../../types/Card.type"
@@ -17,12 +17,15 @@ const CardForm = ({selectCard, choice}:Props) => {
     const [serverError, setServerError] = useState<string>('')
 
     const getQuote = async (): Promise<any> => {
+        if (choice === "none") {
+            showError();
+        }
         let URL;
         if (choice === 'compliment') {
             URL = 'https://complimentr.com/api'
         } else {
             URL = 'https://geek-jokes.sameerkumar.website/api?format=json'
-        }
+        } 
         try {
             const response = await fetch(URL)
             const quote = await response.json()
@@ -32,7 +35,11 @@ const CardForm = ({selectCard, choice}:Props) => {
             console.log(error)
         }
     }
-    
+
+    const showError= () => {
+        setServerError("Your choice isn't loading. Please return to the homepage and make a new choice!")
+    }
+
     useEffect(() => {
         getQuote()
     }, [])
@@ -71,12 +78,9 @@ const CardForm = ({selectCard, choice}:Props) => {
                     <input type='text' name='from-input' onChange={ event => handleChange(event)} value={from} data-cy='from-input'/> 
                 </label>
                 <div>
-                    
                     <Link to="/preview-card" onClick={() => createCard()}>
                         <button data-cy='make-card-button'>Make my card!</button>
                     </Link>
-                    
-                    
                     <button data-cy='get-quote-button' onClick={(event) => {
                         event.preventDefault()
                         getQuote()}}>{`Get new ${choice}!`}
@@ -90,8 +94,3 @@ const CardForm = ({selectCard, choice}:Props) => {
 };
 
 export default CardForm;
-
-
-// https://complimentr.com/api
-    //https://geek-jokes.sameerkumar.website/api?format=json
-    //https://type.fit/api/quotes
