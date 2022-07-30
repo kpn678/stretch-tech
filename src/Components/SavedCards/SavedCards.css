@@ -2,7 +2,6 @@
     margin: 15px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    /* grid-template-rows: repeat(5, 1fr); */
     grid-column-gap: 15px;
     grid-row-gap: 15px;
 }

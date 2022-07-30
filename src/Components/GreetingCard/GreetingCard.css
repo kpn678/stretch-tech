@@ -1,3 +1,8 @@
 .mini-card {
-    background-color: cornflowerblue;
+    border:solid 10px #780116;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    background-color: #F8F0E3;
 }
