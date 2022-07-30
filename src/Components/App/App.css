@@ -1,48 +1,50 @@
 main {
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   text-align: center;
-  height: 100%;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .home {
   border: solid 10px #780116;
   border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-  padding: 30px;
-  background-color: #F8F0E3;
   margin-top: 4vh;
+  padding: 50px;
+  height: 60vh;
+  width: 65vw;
+  background-color: #F8F0E3;
 }
 
 .description > h2 {
-  font-size: 2.5em;
   margin-top: 8vh;
+  font-size: 2.2em;
 }
 
 .description > p, .select-text {
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 
 .select-text {
-  margin-top: 15vh;
+  margin-top: 10vh;
 }
 
 .choices {
+  margin-top: 5vh;
   display: flex;
   justify-content: space-evenly;
-  margin-top: 5vh;
 }
 
 .compliments-button, .jokes-button {
-  cursor: pointer;
-  height: 150px;
-  width: 150px;
   border-radius: 50%;
   border-color: #780116;
-  background-color: white;
+  height: 150px;
+  width: 150px;
+  cursor: pointer;
   font-size: 1.1em;
+  background-color: white;
   color: #780116;
 }
 

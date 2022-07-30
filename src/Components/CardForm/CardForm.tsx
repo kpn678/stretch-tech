@@ -77,13 +77,13 @@ const CardForm = ({selectCard, choice}:Props) => {
                         <input type='text' name='from-input' onChange={ event => handleChange(event)} value={from} data-cy='from-input'/> 
                     </label>
                     <div className='form-buttons'>
-                        <Link to="/preview-card" onClick={() => createCard()}>
-                            <button className='make-card-button' data-cy='make-card-button'>Make my card!</button>
-                        </Link>
                         <button className='get-quote-button' data-cy='get-quote-button' onClick={(event) => {
                             event.preventDefault()
                             getQuote()}}>{`Get new ${choice}!`}
                         </button>
+                        <Link to="/preview-card" onClick={() => createCard()}>
+                            <button className='make-card-button' data-cy='make-card-button'>Make my card!</button>
+                        </Link>
                     </div>
                 </>
             }

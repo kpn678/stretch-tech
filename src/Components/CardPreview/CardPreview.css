@@ -37,3 +37,7 @@
     background-color: white;
     color: #780116;
 }
+
+.new-card-button:hover, .save-card-button:hover {
+    transform: scale(1.2);
+  }

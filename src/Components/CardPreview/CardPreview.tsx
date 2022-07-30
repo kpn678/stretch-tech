@@ -24,10 +24,10 @@ const CardPreview: FC<Props> = ({currentCard, saveCard}) => {
             </div>
             <div className="preview-buttons">
                 <Link to="/create-card">
-                    <button className='new-card-button'>New Card</button>
+                    <button className='new-card-button'>New card!</button>
                 </Link>
                 <Link to="/saved-cards">
-                    <button className='save-card-button' onClick={() => saveCard(currentCard)}>Save Card</button>
+                    <button className='save-card-button' onClick={() => saveCard(currentCard)}>Save my card!</button>
                 </Link>
             </div>
         </section>

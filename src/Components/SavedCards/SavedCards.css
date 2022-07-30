@@ -1,5 +1,5 @@
 .cards-grid { 
-    margin: 15px;
+    margin: 4vh 2vw;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-column-gap: 15px;
