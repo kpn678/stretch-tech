@@ -2,4 +2,14 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color:#E57A44;
+    height: 14vh;
+    width: 100%;
+}
+
+.show-saved-button {
+    cursor: pointer;
+    font-size: 1em;
+    border-style: none;
+    background-color: transparent;
 }

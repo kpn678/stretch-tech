@@ -10,7 +10,7 @@ const NavBar: FC = () => {
                 <h1>Card Generator</h1>
             </Link>
             <Link to={'/saved-cards'} style={{textDecoration: 'none'}}>
-                <button data-cy='show-saved'>🌟</button>
+                <button className='show-saved-button'data-cy='show-saved'>Saved Cards 🌟</button>
             </Link>
         </nav>
 
