@@ -40,7 +40,7 @@ const App: FC = () => {
               <h2>Do you wanna have friends and be <i>PoPuLaR!?</i></h2>
               <p>Make a card for your mom, or your pets, or your friends, or your mailman!</p>
             </div>
-            <p className='select-text'>Please select an option to randomly generate a compliment or a joke for your card:</p>
+            <p className='select-text'><b>Please select an option to randomly generate a compliment or a joke for your card:</b></p>
             <div className='choices'>
               <Link to="/create-card">
                 <button className='compliments-button' name='compliment' onClick={(event) => handleClick(event)} data-cy='compliments-button'>Compliments</button>

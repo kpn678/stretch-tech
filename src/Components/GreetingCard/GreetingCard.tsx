@@ -12,10 +12,10 @@ interface Props {
 const GreetingCard: FC<Card> = ({ to, quote, message, from }) => {
     return (
         <section className="mini-card">
-            <p className='mini-to'>To: {to}</p>
+            <p className='mini-to'><b>To: {to}</b></p>
             <p className='mini-quote'>{quote}</p>
             <p className='mini-message'>{message}</p>
-            <p className='mini-from'>From: {from}</p>
+            <p className='mini-from'><b>From: {from}</b></p>
         </section>
     )
 }
