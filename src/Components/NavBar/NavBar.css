@@ -1,5 +1,29 @@
 nav {
+    height: 15vh;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+h1 {
+    margin-left: 2vw;
+    color: #F8F0E3;
+    font-family: 'Bangers', cursive;
+    font-size: 3em;
+}
+
+.show-saved-button {
+    margin-right: 2vw;
+    height: 90px;
+    width: 90px;
+    cursor: pointer;
+    font-size: .9em;
+    color: #780116;
+    background-color: #F8F0E3;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.show-saved-button:hover {
+    transform: scale(1.2);
 }

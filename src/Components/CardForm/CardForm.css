@@ -1,0 +1,45 @@
+form {
+    border:solid 10px #780116;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    margin-top: 4vh;
+    padding: 50px;
+    height: 60vh;
+    width: 65vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F8F0E3;
+}
+
+input {
+    height: 2.5vh;
+    width: 15vw;
+}
+
+textarea {
+    height: 10vh;
+    width: 50vw;
+}
+
+.form-buttons {
+    margin-top: 5vh;
+    width: 25vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.make-card-button, .get-quote-button {
+    border-radius: 50%;
+    border-color: #780116;
+    height: 120px;
+    width: 120px;
+    cursor: pointer;
+    font-size: 0.8em;
+    background-color: white;
+    color: #780116;
+}
+
+.make-card-button:hover, .get-quote-button:hover {
+    transform: scale(1.2);
+}

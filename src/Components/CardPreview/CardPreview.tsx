@@ -1,5 +1,5 @@
-import React, { FC } from 'react';
-import './CardPreview.css';
+import React, { FC } from 'react'
+import './CardPreview.css'
 import Card from "../../types/Card.type"
 import { Link } from "react-router-dom"
 
@@ -9,8 +9,7 @@ interface Props {
         to: string;
         message: string;
         quote: string;
-    };
-
+    }
     saveCard: (card: Card) => void
 }
 
@@ -21,18 +20,18 @@ const CardPreview: FC<Props> = ({currentCard, saveCard}) => {
                 <h2 className='to-field'>To: {currentCard.to} </h2>
                 <p className='quote-field'>{currentCard.quote}</p>
                 <p className='message-field'>{currentCard.message}</p>
-                <h2 className='from-field'>From: {currentCard.from} </h2>
+                <h2 className='from-field'>From: {currentCard.from}</h2>
             </div>
-            <div className="button-holder">
+            <div className="preview-buttons">
                 <Link to="/create-card">
-                    <button className='new-card-button'>New Card</button>
+                    <button className='new-card-button'>New card!</button>
                 </Link>
                 <Link to="/saved-cards">
-                    <button className='save-card-button' onClick={() => saveCard(currentCard)}>Save Card</button>
+                    <button className='save-card-button' onClick={() => saveCard(currentCard)}>Save my card!</button>
                 </Link>
             </div>
         </section>
-    );
-};
+    )
+}
 
-export default CardPreview;
+export default CardPreview

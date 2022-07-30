@@ -1,6 +1,6 @@
-import React, { FC } from 'react';
-import './SavedCards.css';
-import GreetingCard from '../GreetingCard/GreetingCard';
+import React, { FC } from 'react'
+import './SavedCards.css'
+import GreetingCard from '../GreetingCard/GreetingCard'
 import Card from "../../types/Card.type"
 
 
@@ -19,8 +19,8 @@ const SavedCards: FC<Props> = ({savedCards}) => {
         />
     })
     return (
-        <div className='cards-grid'> {allCards} </div>
-    );
-};
+        <div className='cards-grid'>{allCards}</div>
+    )
+}
 
-export default SavedCards;
+export default SavedCards
