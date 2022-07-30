@@ -20,10 +20,10 @@ const CardForm = ({selectCard, choice}:Props) => {
         if (choice === "none") {
             showError();
         }
-        let URL;
+        let URL: any;
         if (choice === 'compliment') {
             URL = 'https://complimentr.com/api'
-        } else {
+        } else if (choice === 'joke') {
             URL = 'https://geek-jokes.sameerkumar.website/api?format=json'
         } 
         try {
