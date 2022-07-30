@@ -7,6 +7,23 @@ describe('Compliment Card Form Flow', () => {
     cy.visit('http://localhost:3000/')
     cy.get('[data-cy="compliments-button"]').click()
   })
+
+  it('should display an error to the user if compliments do not load', () => {
+    cy.intercept('GET', 'https://complimentr.com/api', {
+      statusCode: 400
+    })
+    cy.visit('http://localhost:3000/create-card')
+    .contains('.error-alert', 'Sorry, we can\'t load this page right now. Maybe go read a book or something?')
+  })
+
+  it('should display an error to the user if compliments do not load', () => {
+    cy.intercept('GET', 'https://complimentr.com/api', {
+      statusCode: 500
+    })
+    cy.visit('http://localhost:3000/create-card')
+    .contains('.error-alert', 'Sorry, we can\'t load this page right now. Maybe go read a book or something?')
+  })
+
   it('Should display a header and Compliment Card form', () => {
     cy.get('form')
     cy.contains('h1', 'Card Generator')
