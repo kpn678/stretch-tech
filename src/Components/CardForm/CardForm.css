@@ -1,0 +1,45 @@
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border:solid 10px #780116;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    height: 60vh;
+    width: 65vw;
+    margin-top: 4vh;
+    padding: 50px;
+    background-color: #F8F0E3;
+}
+
+input {
+    height: 2.5vh;
+    width: 15vw;
+}
+
+textarea {
+    height: 10vh;
+    width: 50vw;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5vh;
+    width: 25vw;
+}
+
+.make-card-button, .get-quote-button {
+    cursor: pointer;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    border-color: #780116;
+    background-color: white;
+    font-size: 0.8em;
+    color: #780116;
+}
+
+.make-card-button:hover, .get-quote-button:hover {
+    transform: scale(1.2);
+  }

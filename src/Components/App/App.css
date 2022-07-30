@@ -1,11 +1,19 @@
 main {
-  /* color: white; */
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   text-align: center;
+  height: 100%;
+}
+
+.home {
+  border: solid 10px #780116;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  padding: 30px;
+  background-color: #F8F0E3;
+  margin-top: 4vh;
 }
 
 .description > h2 {
@@ -32,7 +40,10 @@ main {
   height: 150px;
   width: 150px;
   border-radius: 50%;
+  border-color: #780116;
+  background-color: white;
   font-size: 1.1em;
+  color: #780116;
 }
 
 .compliments-button:hover, .jokes-button:hover {

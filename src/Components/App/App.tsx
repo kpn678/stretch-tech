@@ -37,8 +37,8 @@ const App: FC = () => {
         exact path='/' render={()=> 
           <section className='home' data-cy='home'>
             <div className='description'>
-              <h2>Do you wanna have friends and be <i>PoPuLaR!?!?!?!?!</i></h2>
-              <p>Make a card for your mom, or your dad, or your pets, or your friends, or your mailman!</p>
+              <h2>Do you wanna have friends and be <i>PoPuLaR!?</i></h2>
+              <p>Make a card for your mom, or your pets, or your friends, or your mailman!</p>
             </div>
             <p className='select-text'>Please select an option to randomly generate a compliment or a joke for your card:</p>
             <div className='choices'>
