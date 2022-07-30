@@ -67,7 +67,7 @@ const CardForm = ({selectCard, choice}:Props) => {
 
     return (
         <form>
-            { serverError ? <h2>{serverError}</h2> : 
+            { serverError ? <h2 data-cy="error-alert" className="error-alert">{serverError}</h2> : 
             <>
                 <label htmlFor='to-input'>To: 
                     <input type='text' name='to-input' value={to} onChange={ event => handleChange(event)} data-cy='to-input'/> 
