@@ -16,6 +16,14 @@ describe('Joke Card Form Flow', () => {
       .contains('.error-alert', 'Sorry, we can\'t load this page right now. Maybe go read a book or something?')
     })
 
+    it('should display an error to the user if jokes do not load', () => {
+      cy.intercept('GET', 'https://geek-jokes.sameerkumar.website/api?format=json', {
+        statusCode: 500
+      })
+      cy.visit('http://localhost:3000/create-card')
+      .contains('.error-alert', 'Sorry, we can\'t load this page right now. Maybe go read a book or something?')
+    })
+
     it('Should display a header and Joke Card form', () => {
       cy.get('form')
       cy.contains('h1', 'Card Generator')
