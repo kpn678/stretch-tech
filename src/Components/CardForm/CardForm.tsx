@@ -17,13 +17,10 @@ const CardForm = ({selectCard, choice}:Props) => {
     const [serverError, setServerError] = useState<string>('')
 
     const getQuote = async (): Promise<any> => {
-        if (choice === "none") {
-            showError();
-        }
-        let URL;
+        let URL: any;
         if (choice === 'compliment') {
             URL = 'https://complimentr.com/api'
-        } else {
+        } else if (choice === 'joke') {
             URL = 'https://geek-jokes.sameerkumar.website/api?format=json'
         } 
         try {
@@ -34,10 +31,6 @@ const CardForm = ({selectCard, choice}:Props) => {
             setServerError("Sorry, we can't load this page right now. Maybe go read a book or something?")
             console.log(error)
         }
-    }
-
-    const showError= () => {
-        setServerError("Your choice isn't loading. Please return to the homepage and make a new choice!")
     }
 
     useEffect(() => {
@@ -67,7 +60,7 @@ const CardForm = ({selectCard, choice}:Props) => {
 
     return (
         <form>
-            { serverError ? <h2>{serverError}</h2> : 
+            { serverError ? <h2 data-cy="error-alert" className="error-alert">{serverError}</h2> : 
             <>
                 <label htmlFor='to-input'>To: 
                     <input type='text' name='to-input' value={to} onChange={ event => handleChange(event)} data-cy='to-input'/> 
