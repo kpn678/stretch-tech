@@ -15,7 +15,7 @@ describe('Preview Card Page Flow', () => {
         cy.get('.new-card-button').click()
         cy.url().should('eq', 'http://localhost:3000/create-card')
     })
-    it('Should be able to navigate to create a new card page', () => {
+    it('Should be able to navigate to saved cards page', () => {
         cy.get('.save-card-button').click()
         cy.url().should('eq', 'http://localhost:3000/saved-cards')
     })
