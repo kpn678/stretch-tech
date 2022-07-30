@@ -17,9 +17,6 @@ const CardForm = ({selectCard, choice}:Props) => {
     const [serverError, setServerError] = useState<string>('')
 
     const getQuote = async (): Promise<any> => {
-        if (choice === "none") {
-            showError();
-        }
         let URL: any;
         if (choice === 'compliment') {
             URL = 'https://complimentr.com/api'
@@ -34,10 +31,6 @@ const CardForm = ({selectCard, choice}:Props) => {
             setServerError("Sorry, we can't load this page right now. Maybe go read a book or something?")
             console.log(error)
         }
-    }
-
-    const showError= () => {
-        setServerError("Your choice isn't loading. Please return to the homepage and make a new choice!")
     }
 
     useEffect(() => {
