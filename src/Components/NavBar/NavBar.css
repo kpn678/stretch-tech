@@ -14,10 +14,16 @@ h1 {
 }
 
 .show-saved-button {
-    border-style: none;
     margin-right: 2vw;
+    height: 90px;
+    width: 90px;
     cursor: pointer;
-    font-size: 1em;
-    background-color: transparent;
-    color: #F8F0E3;
+    font-size: .9em;
+    color: #780116;
+    background-color: #F8F0E3;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.show-saved-button:hover {
+    transform: scale(1.2);
 }

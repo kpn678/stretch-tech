@@ -4,7 +4,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   display: flex;
   flex-direction: column;
-  background-color: #898952;
+  background-image: url('./images/background1.jpg');
+  background-size: cover;
   color: #780116;
 }
 
