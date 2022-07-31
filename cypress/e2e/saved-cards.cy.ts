@@ -18,8 +18,13 @@ describe('Saved Cards Page Flow', () => {
             cy.contains('.mini-from', 'From: A. C. G. K.')
         })
     })
-    it('Should be able to return home by clicking the title', () => {
-        cy.get('h1').click()
-        cy.url().should('eq', 'http://localhost:3000/')
+    it.only('Should be able to delete a card', () => {
+        cy.get('.mini-card').get('.delete-button').eq(1).click()
+        cy.get('.mini-card').should('have.length', 1)
     })
+
+    // it('Should be able to return home by clicking the title', () => {
+    //     cy.get('h1').click()
+    //     cy.url().should('eq', 'http://localhost:3000/')
+    // })
 })
