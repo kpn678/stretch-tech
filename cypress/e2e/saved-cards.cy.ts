@@ -10,12 +10,16 @@ describe('Saved Cards Page Flow', () => {
     it('Should display all saved cards', () => {
         cy.get('.mini-card').should('have.length', 2)
     })
-    it.only('Should display a card with a "to", "quote", "message" and "from"', () => {
+    it('Should display a card with a "to", "quote", "message" and "from"', () => {
         cy.get('.mini-card').eq(0).within(() => {
             cy.contains('.mini-to', 'To: Scott')
             cy.contains('.mini-quote', 'I would love to change the world but they won’t give me the source code.')
             cy.contains('.mini-message', 'U R GR8!!!!!!!')
             cy.contains('.mini-from', 'From: A. C. G. K.')
         })
+    })
+    it('Should be able to return home by clicking the title', () => {
+        cy.get('h1').click()
+        cy.url().should('eq', 'http://localhost:3000/')
     })
 })

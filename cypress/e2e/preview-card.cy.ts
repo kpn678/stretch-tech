@@ -25,4 +25,8 @@ describe('Preview Card Page Flow', () => {
           .url()
           .should('eq', 'http://localhost:3000/saved-cards')
     })
+    it('Should be able to return home by clicking the title', () => {
+        cy.get('h1').click()
+        cy.url().should('eq', 'http://localhost:3000/')
+    })
 })
