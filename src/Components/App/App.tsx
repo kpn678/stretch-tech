@@ -14,7 +14,9 @@ const App: FC = () => {
     from: "",
     to: "",
     message: "",
-    quote: ""
+    quote: "",
+    id: 0,
+    deleteCard(){}
   })
 
   const handleClick = (event: MouseEvent) => {
@@ -28,6 +30,11 @@ const App: FC = () => {
 
   const selectCard = (card: Card): void => {
     setCurrentCard(card)
+  }
+
+  const deleteCard = (id: number): void => {
+    const filteredCards = savedCards.filter(card => card.id !== id)
+    setSavedCards(filteredCards)
   }
 
   return (
@@ -59,7 +66,7 @@ const App: FC = () => {
         path='/preview-card' render={() => <CardPreview saveCard={saveCard} currentCard={currentCard} />}
       />
       <Route
-        path='/saved-cards' render={() => <SavedCards savedCards={savedCards} />}
+        path='/saved-cards' render={() => <SavedCards savedCards={savedCards} deleteCard={deleteCard}/>}
       />
     </main>
   )

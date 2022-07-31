@@ -6,9 +6,10 @@ import Card from "../../types/Card.type"
 
 interface Props{
     savedCards: Card[]
+    deleteCard: (id: number) => void
 }
 
-const SavedCards: FC<Props> = ({savedCards}) => {
+const SavedCards: FC<Props> = ({savedCards, deleteCard}) => {
     const allCards= savedCards.map((card) => {
         return <GreetingCard
             key={card.id} 
@@ -16,6 +17,8 @@ const SavedCards: FC<Props> = ({savedCards}) => {
             quote={card.quote}
             message={card.message}
             from={card.from}
+            id={card.id}
+            deleteCard={deleteCard}
         />
     })
     return (
