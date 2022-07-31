@@ -27,7 +27,7 @@
     justify-content: space-between;
 }
 
-.new-card-button, .save-card-button {
+.new-card-button, .save-card-button, .pdf-button {
     border-radius: 50%;
     border-color: #780116;
     height: 120px;
@@ -38,6 +38,6 @@
     color: #780116;
 }
 
-.new-card-button:hover, .save-card-button:hover {
+.new-card-button:hover, .save-card-button:hover, .pdf-button:hover {
     transform: scale(1.2);
   }
