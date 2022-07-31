@@ -3,7 +3,7 @@ describe('Home Page Flow', () => {
     cy.visit('http://localhost:3000/')
   })
   it('Should be able to display header', () => {
-    cy.contains('h1', 'Card Generator')
+    cy.contains('h1', 'Card Party')
   })
   it('Should be able to display the description of the page', () => {
     cy.contains('h2', 'Do you want to show your friends and family that you’re thinking about them, but you aren’t quite sure what to say? Liven up someone’s day with Card Party, the greeting card generator that provides a random joke or compliment to brighten someone’s day.')
