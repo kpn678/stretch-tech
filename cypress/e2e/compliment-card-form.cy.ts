@@ -55,4 +55,8 @@ describe('Compliment Card Form Flow', () => {
     })
     cy.url().should('eq', 'http://localhost:3000/preview-card')
   })
+  it('Should be able to return home by clicking the title', () => {
+    cy.get('h1').click()
+    cy.url().should('eq', 'http://localhost:3000/')
+})
 })

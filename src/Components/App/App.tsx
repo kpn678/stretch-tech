@@ -44,8 +44,8 @@ const App: FC = () => {
         exact path='/' render={()=> 
           <section className='home' data-cy='home'>
             <div className='description'>
-              <h2>Do you wanna have friends and be <i>PoPuLaR!?</i></h2>
-              <p>Make a card for your mom, or your pets, or your friends, or your mailman!</p>
+              <h2>Do you want to show your friends and family that you’re thinking about them, but you aren’t quite sure what to say? Liven up someone’s day with Card Party, the greeting card generator that provides a random joke or compliment to brighten someone’s day.</h2>
+              <p>Make a card for your mom, or your pets, or your friends, or your mailman! The choice is yours.</p>
             </div>
             <p className='select-text'><b>Please select an option to randomly generate a compliment or a joke for your card:</b></p>
             <div className='choices'>
