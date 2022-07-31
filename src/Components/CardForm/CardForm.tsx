@@ -42,7 +42,8 @@ const CardForm = ({selectCard, choice}:Props) => {
             quote: quote,
             message: message,
             from: from,
-            id: Date.now()
+            id: Date.now(),
+            deleteCard(){}
         }
         selectCard(card)
     }

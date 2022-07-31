@@ -11,16 +11,16 @@ interface Props {
         to: string;
         message: string;
         quote: string;
+        id: number;
+        deleteCard: (id: number) => void;
     }
     saveCard: (card: Card) => void
 }
 
 const CardPreview: FC<Props> = ({currentCard, saveCard}) => {
     const printRef = React.useRef<HTMLDivElement>(null);
-    console.log(printRef.current)
 
     const handleDownloadPdfTest= async () => {
-        console.log(printRef.current)
         const element = printRef.current;
         const canvas = await html2canvas(element as HTMLDivElement);
         const data = canvas.toDataURL('image/png');
