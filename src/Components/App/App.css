@@ -18,17 +18,14 @@ main {
   background-color: #F8F0E3;
 }
 
-.description > h2 {
+.description {
   margin-top: 4vh;
-  font-size: 2.2em;
-}
-
-.description > p, .select-text {
-  font-size: 1.2em;
+  font-size: 1.5em;
 }
 
 .select-text {
   margin-top: 10vh;
+  font-size: 1.5em;
 }
 
 .choices {
@@ -40,8 +37,8 @@ main {
 .compliments-button, .jokes-button {
   border-radius: 50%;
   border-color: #780116;
-  height: 150px;
-  width: 150px;
+  height: 120px;
+  width: 120px;
   cursor: pointer;
   font-size: 1.1em;
   background-color: white;

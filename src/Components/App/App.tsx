@@ -43,11 +43,8 @@ const App: FC = () => {
       <Route 
         exact path='/' render={()=> 
           <section className='home' data-cy='home'>
-            <div className='description'>
-              <h2>Do you want to show your friends and family that you’re thinking about them, but you aren’t quite sure what to say? Liven up someone’s day with Card Party, the greeting card generator that provides a random joke or compliment to brighten someone’s day.</h2>
-              <p>Make a card for your mom, or your pets, or your friends, or your mailman! The choice is yours.</p>
-            </div>
-            <p className='select-text'><b>Please select an option to randomly generate a compliment or a joke for your card:</b></p>
+            <p className='description'>Do you want to show your friends and family that you’re thinking about them, but you aren’t quite sure what to say? Liven up someone’s day with Card Party, the greeting card generator that provides a random joke or compliment to brighten someone’s day.</p>    
+            <h2 className='select-text'>Please select an option to randomly generate a compliment or a joke for your card:</h2>
             <div className='choices'>
               <Link to="/create-card">
                 <button className='compliments-button' name='compliment' onClick={(event) => handleClick(event)} data-cy='compliments-button'>Compliments</button>

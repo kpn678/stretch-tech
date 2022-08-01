@@ -10,7 +10,7 @@ const NavBar: FC = () => {
                 <h1>Card Party</h1>
             </Link>
             <Link to={'/saved-cards'} style={{textDecoration: 'none'}}>
-                <button className='show-saved-button'data-cy='show-saved'>Saved Cards</button>
+                <button className='show-saved-button'data-cy='show-saved'>Saved <br></br> Cards</button>
             </Link>
         </nav>
 

@@ -62,12 +62,12 @@ const CardForm = ({selectCard, choice}:Props) => {
         <form>
             { serverError ? <h2 data-cy="error-alert" className="error-alert">{serverError}</h2> : 
                 <>
-                    <label htmlFor='to-input'>To: 
+                    <label htmlFor='to-input'>To:&nbsp;
                         <input type='text' name='to-input' value={to} onChange={ event => handleChange(event)} data-cy='to-input'/> 
                     </label>
                     <h2 data-cy='quote'>{quote}</h2>
                     <textarea placeholder='Add message here...' name='message-input' onChange={ event => handleChange(event)} value={message} data-cy='message-input'/>
-                    <label htmlFor='from-input'>From: 
+                    <label htmlFor='from-input'>From:&nbsp;
                         <input type='text' name='from-input' onChange={ event => handleChange(event)} value={from} data-cy='from-input'/> 
                     </label>
                     <div className='form-buttons'>

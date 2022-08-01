@@ -15,12 +15,12 @@ h1 {
 
 .show-saved-button {
     margin-right: 2vw;
-    height: 90px;
-    width: 90px;
+    height: 110px;
+    width: 110px;
     cursor: pointer;
-    font-size: .9em;
-    color: #780116;
-    background-color: #F8F0E3;
+    font-size: .85em;
+    background-color: #780116;
+    color: #F8F0E3;
     clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
 }
 

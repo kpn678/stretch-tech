@@ -14,11 +14,11 @@ interface Props {
 const GreetingCard: FC<Card> = ({ to, quote, message, from, id, deleteCard }) => {
     return (
         <section className="mini-card">
+            <button className='delete-button' onClick={() => deleteCard(id)}>X</button>
             <p className='mini-to'><b>To: {to}</b></p>
             <p className='mini-quote'>{quote}</p>
             <p className='mini-message'>{message}</p>
             <p className='mini-from'><b>From: {from}</b></p>
-            <button className='delete-button' onClick={() => deleteCard(id)}>delete</button>
         </section>
     )
 }
