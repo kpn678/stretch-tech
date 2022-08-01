@@ -3,7 +3,7 @@ describe('Preview Card Page Flow', () => {
       cy.create()
     })
     it('Should be able to display header', () => {
-        cy.contains('h1', 'Card Generator')
+        cy.contains('h1', 'Card Party')
     })
     it('Should be able to display a preview of a new card', () => {
         cy.contains('.to-field', 'To: Scott')
