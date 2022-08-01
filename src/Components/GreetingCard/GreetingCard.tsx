@@ -11,14 +11,7 @@ interface Props {
   deleteCard: (id: number) => void;
 }
 
-const GreetingCard: FC<Card> = ({
-  to,
-  quote,
-  message,
-  from,
-  id,
-  deleteCard,
-}) => {
+const GreetingCard: FC<Card> = ({ to, quote, message, from, id, deleteCard }: Props) => {
   return (
     <section className="mini-card">
       <button className="delete-button" onClick={() => deleteCard(id)}>
