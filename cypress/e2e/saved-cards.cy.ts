@@ -4,7 +4,7 @@ describe('Saved Cards Page Flow', () => {
       cy.save()
     })
     it('Should be able to display header and cards grid', () => {
-        cy.contains('h1', 'Card Generator')
+        cy.contains('h1', 'Card Party')
         cy.get('.cards-grid').should('be.visible')
     })
     it('Should display all saved cards', () => {

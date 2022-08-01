@@ -6,10 +6,7 @@ describe('Home Page Flow', () => {
     cy.contains('h1', 'Card Party')
   })
   it('Should be able to display the description of the page', () => {
-    cy.contains('h2', 'Do you want to show your friends and family that you’re thinking about them, but you aren’t quite sure what to say? Liven up someone’s day with Card Party, the greeting card generator that provides a random joke or compliment to brighten someone’s day.')
-  })
-  it('Should be able to display the description of the page', () => {
-    cy.contains('p', 'Make a card for your mom, or your pets, or your friends, or your mailman! The choice is yours.')
+    cy.contains('.description', 'Do you want to show your friends and family that you’re thinking about them, but you aren’t quite sure what to say? Liven up someone’s day with Card Party, the greeting card generator that provides a random joke or compliment to brighten someone’s day.')
   })
   it('Should be able to click compliment button to navigate to compliment card option', () => {
     cy.get('[data-cy="compliments-button"]')

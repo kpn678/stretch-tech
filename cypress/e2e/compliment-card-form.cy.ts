@@ -23,7 +23,7 @@ describe('Compliment Card Form Flow', () => {
   })
   it('Should display a header and Compliment Card form', () => {
     cy.get('form')
-    cy.contains('h1', 'Card Generator')
+    cy.contains('h1', 'Card Party')
   })
   it('Should be able to generate a new compliment', () => {
     cy.intercept('GET', 'https://complimentr.com/api', {
