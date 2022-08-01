@@ -4,12 +4,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   display: flex;
   flex-direction: column;
-  background-image: url('./images/background1.jpg');
+  background-image: url("./images/background1.jpg");
   background-size: cover;
   color: #780116;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }

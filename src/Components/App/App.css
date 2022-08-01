@@ -5,7 +5,7 @@ main {
   align-items: center;
   justify-content: space-evenly;
   text-align: center;
-  font-family:'Baloo 2', cursive;
+  font-family: "Baloo 2", cursive;
 }
 
 .home {
@@ -15,7 +15,7 @@ main {
   padding: 50px;
   height: 60vh;
   width: 65vw;
-  background-color: #F8F0E3;
+  background-color: #f8f0e3;
 }
 
 .description {
@@ -34,7 +34,8 @@ main {
   justify-content: space-evenly;
 }
 
-.compliments-button, .jokes-button {
+.compliments-button,
+.jokes-button {
   border-radius: 50%;
   border-color: #780116;
   height: 120px;
@@ -45,6 +46,7 @@ main {
   color: #780116;
 }
 
-.compliments-button:hover, .jokes-button:hover {
+.compliments-button:hover,
+.jokes-button:hover {
   transform: scale(1.2);
 }

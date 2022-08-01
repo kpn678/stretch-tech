@@ -1,43 +1,48 @@
 .card-preview-page {
-    border:solid 10px #780116;
-    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-    margin-top: 4vh;
-    padding: 50px;
-    height: 60vh;
-    width: 65vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #F8F0E3;
-};
-
-.card {
-    height: 75%;
+  border: solid 10px #780116;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  margin-top: 4vh;
+  padding: 50px;
+  height: 60vh;
+  width: 65vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #f8f0e3;
 }
 
-.quote-field, .message-field {
-    font-size: 1.5em;
+.card {
+  height: 75%;
+}
+
+.quote-field,
+.message-field {
+  font-size: 1.5em;
 }
 
 .preview-buttons {
-    height: 25%;
-    width: 40vw;
-    display: flex;
-    justify-content: space-between;
+  height: 25%;
+  width: 40vw;
+  display: flex;
+  justify-content: space-between;
 }
 
-.new-card-button, .save-card-button, .pdf-button {
-    border-radius: 50%;
-    border-color: #780116;
-    height: 120px;
-    width: 120px;
-    cursor: pointer;
-    font-size: 0.8em;
-    background-color: white;
-    color: #780116;
+.new-card-button,
+.save-card-button,
+.pdf-button {
+  border-radius: 50%;
+  border-color: #780116;
+  height: 120px;
+  width: 120px;
+  cursor: pointer;
+  font-size: 0.8em;
+  background-color: white;
+  color: #780116;
 }
 
-.new-card-button:hover, .save-card-button:hover, .pdf-button:hover {
-    transform: scale(1.2);
-  }
+.new-card-button:hover,
+.save-card-button:hover,
+.pdf-button:hover {
+  transform: scale(1.2);
+}
