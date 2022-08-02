@@ -31,7 +31,7 @@ Card Party allows you to create a card with a compliment or joke. Once you are f
 1.  Clone this [repository](https://github.com/kpn678/stretch-tech).
 2. `cd` into the directory.
 3. Run `npm i` in your terminal
-4. Run `npm start`
+4. Run `npm run start-dev`
 6. Go to http://localhost:8080/ to view the site.
 
 ### Deploy Link
