@@ -1,6 +1,6 @@
 describe('Joke Card Form Flow', () => {
   beforeEach(()=> {
-    cy.intercept('GET', 'https://geek-jokes.sameerkumar.website/api?format=json', {
+    cy.intercept('GET', 'http://asands17-jokes-api.herokuapp.com/joke', {
       fixture: "joke.json",
       statusCode: 200
     })
@@ -8,14 +8,14 @@ describe('Joke Card Form Flow', () => {
     cy.get('[data-cy="jokes-button"]').click()
   })
   it('Should display an error to the user if jokes do not load', () => {
-    cy.intercept('GET', 'https://geek-jokes.sameerkumar.website/api?format=json', {
+    cy.intercept('GET', 'http://asands17-jokes-api.herokuapp.com/joke', {
       statusCode: 400
     })
     cy.visit('http://localhost:3000/create-card')
     .contains('.error-alert', 'Sorry, we can\'t load this page right now. Maybe go read a book or something?')
   })
   it('Should display an error to the user if jokes do not load', () => {
-    cy.intercept('GET', 'https://geek-jokes.sameerkumar.website/api?format=json', {
+    cy.intercept('GET', 'http://asands17-jokes-api.herokuapp.com/joke', {
       statusCode: 500
     })
     cy.visit('http://localhost:3000/create-card')
@@ -26,7 +26,7 @@ describe('Joke Card Form Flow', () => {
     cy.get('form')
   })
   it('Should be able to generate a new joke', () => {
-    cy.intercept('GET', 'https://geek-jokes.sameerkumar.website/api?format=json', {
+    cy.intercept('GET', 'http://asands17-jokes-api.herokuapp.com/joke', {
       fixture: "joke2.json",
       statusCode: 200
     })
