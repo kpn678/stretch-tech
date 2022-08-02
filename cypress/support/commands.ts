@@ -1,6 +1,6 @@
 Cypress.Commands.add("create", () => {
   const baseURL = 'http://localhost:3000';
-    cy.intercept('GET', 'https://geek-jokes.sameerkumar.website/api?format=json', {
+    cy.intercept('GET', 'http://asands17-jokes-api.herokuapp.com/joke', {
         fixture: "joke.json",
         statusCode: 200
     })
@@ -13,7 +13,7 @@ Cypress.Commands.add("create", () => {
 })
 Cypress.Commands.add("save", () => { 
   cy.get('.save-card-button').click()
-  cy.intercept('GET', 'https://geek-jokes.sameerkumar.website/api?format=json', {
+  cy.intercept('GET', 'http://asands17-jokes-api.herokuapp.com/joke', {
         fixture: "joke2.json",
         statusCode: 200
     })
